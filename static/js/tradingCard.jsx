@@ -29,12 +29,19 @@ function TradingCard(props) {
 }
 
 function TradingCardContainer() {
+  const floatCard = {
+    name: 'Float',
+    skill: 'baking pretzels',
+    imgUrl: '/static/img/float.jpg'
+  };
+  const [cards, updateCards] = React.useState([floatCard])
+  
   const tradingCards = [];
 
-  for (const currentCard of tradingCardData) {
+  for (const currentCard of cards) {
     tradingCards.push(
       <TradingCard
-        key={currentCard.name}
+        key= {currentCard.name}
         name={currentCard.name}
         skill={currentCard.skill}
         imgUrl={currentCard.imgUrl}
